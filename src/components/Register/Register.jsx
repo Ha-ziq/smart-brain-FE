@@ -23,7 +23,7 @@ const Register = ({ setroute,loadUsers,setInputUrl }) => {
       if(user.id){
         console.log(user)
         loadUsers(user)
-        setroute("home")
+        setroute("signin")
         setInputUrl("")
       }
     }).catch(error => {
