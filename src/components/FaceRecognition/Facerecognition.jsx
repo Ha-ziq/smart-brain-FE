@@ -21,7 +21,7 @@ const FaceRecognition = ({ url, boxes }) => {
         <img
           id="inputImage"
           src={url}
-          alt="Face"
+          alt=""
           width="500px"
           onLoad={handleImageLoad}
           style={{ display: "block" }}

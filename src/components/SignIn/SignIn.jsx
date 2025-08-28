@@ -6,11 +6,12 @@ const SignIn = ({ setroute,loadUsers }) => {
   const [password, setpassword] = useState("");
  
   const [wrongCredentals, setwrongCredentials] = useState(false)
+ const API_URL = import.meta.env.VITE_API_URL;
 
   const submit = () => {
     // console.log(email,password)
 
-    fetch('http://localhost:3000/signin', {
+    fetch(`${API_URL}/signin`, {
       method: 'post',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({

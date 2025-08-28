@@ -10,6 +10,8 @@ import { useState, } from 'react'
 import Register from './components/Register/Register'
 
 function App() {
+ const API_URL = import.meta.env.VITE_API_URL;
+
   const [InputUrl, setInputUrl] = useState("");
   // const [url, seturl] = useState("");
   const [route, setroute] = useState("signin");
@@ -35,7 +37,7 @@ function App() {
   }
   const onbuttonsubmit = () => {
 
-    fetch("http://localhost:3000/face-detect", {
+    fetch(`${API_URL}/face-detect`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ imageUrl: InputUrl }),
@@ -45,7 +47,7 @@ function App() {
         console.log("Clarifai response:", data);
         setFaceBoxes(data.boxes || []);
         if (data) {
-          fetch("http://localhost:3000/image", {
+          fetch(`${API_URL}/image`, {
             method: "put",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ id: user.id }),
