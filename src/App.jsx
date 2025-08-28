@@ -71,7 +71,7 @@ function App() {
         (route === "signin")
           ? <>
             <Navigation setroute={setroute} route={route} />
-            <SignIn setroute={setroute} loadUsers={loadUsers} />
+            <SignIn setroute={setroute} loadUsers={loadUsers} setInputUrl={setInputUrl}/>
           </>
           :
           <>
@@ -79,7 +79,7 @@ function App() {
               ?
               <>
                 <Navigation setroute={setroute} route={route} />
-                <Register setroute={setroute} loadUsers={loadUsers} />
+                <Register setroute={setroute} loadUsers={loadUsers} setInputUrl={setInputUrl}/>
               </>
               :
               <>

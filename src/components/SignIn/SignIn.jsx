@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const SignIn = ({ setroute,loadUsers }) => {
+const SignIn = ({ setroute,loadUsers,setInputUrl }) => {
 
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
@@ -26,6 +26,7 @@ const SignIn = ({ setroute,loadUsers }) => {
         if (user.id) {
           loadUsers(user)
           setroute("home")
+          setInputUrl("")
         } else {
           setwrongCredentials(true)
           console.log("wrong emial password")

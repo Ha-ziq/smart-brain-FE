@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-const Register = ({ setroute,loadUsers }) => {
+const Register = ({ setroute,loadUsers,setInputUrl }) => {
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
@@ -24,6 +24,7 @@ const Register = ({ setroute,loadUsers }) => {
         console.log(user)
         loadUsers(user)
         setroute("home")
+        setInputUrl("")
       }
     }).catch(error => {
         console.error('Error:', error.message);
