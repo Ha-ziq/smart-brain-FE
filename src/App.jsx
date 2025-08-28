@@ -44,7 +44,6 @@ function App() {
     })
       .then(res => res.json())
       .then(data => {
-        console.log("Clarifai response:", data);
         setFaceBoxes(data.boxes || []);
         if (data) {
           fetch(`${API_URL}/image`, {
@@ -53,12 +52,12 @@ function App() {
             body: JSON.stringify({ id: user.id }),
           }).then(res => res.json())
           .then(totalEntries => {
-            console.log(totalEntries)
+            
     setUser(prevUser => ({
       ...prevUser,
       entries: totalEntries.entries   // 🔥 always the exact value from server
     }));
-  }).catch(err => console.log("Error updating entries:", err));
+  }).catch(err => console.log(err));
         }
       })
       .catch(err => console.error("error", err));

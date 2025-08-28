@@ -9,7 +9,7 @@ const SignIn = ({ setroute,loadUsers,setInputUrl }) => {
  const API_URL = import.meta.env.VITE_API_URL;
 
   const submit = () => {
-    // console.log(email,password)
+  
 
     fetch(`${API_URL}/signin`, {
       method: 'post',
@@ -21,7 +21,6 @@ const SignIn = ({ setroute,loadUsers,setInputUrl }) => {
     })
       .then(Response => Response.json())
       .then(user => { 
-        console.log(user)
 
         if (user.id) {
           loadUsers(user)

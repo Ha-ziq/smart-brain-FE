@@ -21,7 +21,7 @@ const Register = ({ setroute,loadUsers,setInputUrl }) => {
     .then(response=>response.json())
     .then(user=>{
       if(user.id){
-        console.log(user)
+
         loadUsers(user)
         setroute("signin")
         setInputUrl("")
